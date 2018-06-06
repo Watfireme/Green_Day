@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<style>
+	div{
+	 margin: 3px;
+	 height: 10px;
+	 weight:30px;
+	 padding: 18px;
+	}
+	button{
+	 margin: 3px;
+	 height: 100px;
+	 weight:300px;
+	 padding: 18px;
+	 background-color:Pink;
+	}
+	</style>
+	</head>
+	<body>
+		<div style = "background-color: #003366">1</div>
+		<div style = "background-color: #ff33cc">2</div>
+		<div style = "background-color: #ff0066">3</div>
+		<div style = "background-color: #ffff00">4</div>
+		<div style = "background-color: #800000">5</div>
+		<div style = "background-color: #9966ff">6</div>
+		<div style = "background-color: #33cc33">7</div>
+		<div style = "background-color: #ffffcc">8</div>
+		<div style = "background-color: #00ffff">9</div>
+		<div style = "background-color: #ff9900">10</div>
+		<div style = "background-color: #0033cc">11</div>
+		<div style = "background-color: #993333">12</div>
+		<div style = "background-color: #996633">13</div>
+		<div style = "background-color: #ffffff">14</div>
+		<div style = "background-color: #003300">15</div>
+		<div style = "background-color: #660066">16</div>
+		<div style = "background-color: #ff0000">17</div>
+		<div style = "background-color: #b3b300">18</div>
+		<button onClick = "sort()">Sort</button>
+		<script>
+			function sort(){
+				var colors = [];
+				for (var i = 0; i < document.body.childNodes.length; i++) {
+					if(document.body.childNodes[i].nodeName == "DIV"){
+						for(var j = 0; j < document.body.childNodes[i].style.length; j++){
+							console.log(document.body.childNodes[i].style[i]);
+						}
+						colors.push(document.body.childNodes[i].style.backgroundColor);
+					}
+				}
+				colors.sort();
+				for (var i = 0, j = 0; i < document.body.childNodes.length; i++) {
+					if(document.body.childNodes[i].nodeName == "DIV"){
+						document.body.childNodes[i].style.backgroundColor = colors[j];
+						j++;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
